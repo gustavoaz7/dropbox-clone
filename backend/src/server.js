@@ -1,10 +1,21 @@
+require("dotenv").config();
 const express = require("express");
 const mongoose = require("mongoose");
 const path = require("path");
-require("dotenv").config();
+const http = require("http");
+const socket = require("socket.io");
+
 const routes = require("./routes");
 
 const app = express();
+const server = http.Server(app);
+const io = socket(server);
+
+io.on("connect", socket => {
+  socket.on("connectRoom", box => {
+    socket.join(box);
+  });
+});
 
 mongoose.connect(
   `mongodb+srv://gustavoaz7:${
@@ -14,6 +25,11 @@ mongoose.connect(
     useNewUrlParser: true
   }
 );
+
+app.use((req, res, next) => {
+  req.io = io;
+  return next();
+});
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
