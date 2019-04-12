@@ -1,5 +1,10 @@
 {
-  "dependencies": {
-    "socket.io": "^2.2.0"
+  "name": "dropbox-clone",
+  "version": "1.0.0",
+  "repository": "https://github.com/gustavoaz7/dropbox-clone.git",
+  "author": "gustavoaz7 <gustavo_azevedo_7@hotmail.com>",
+  "license": "MIT",
+  "scripts": {
+    "start": "cd backend/ && yarn start"
   }
 }

@@ -4,10 +4,12 @@ const mongoose = require("mongoose");
 const path = require("path");
 const http = require("http");
 const socket = require("socket.io");
+const cors = require("cors");
 
 const routes = require("./routes");
 
 const app = express();
+app.use(cors());
 const server = http.Server(app);
 const io = socket(server);
 
@@ -37,4 +39,4 @@ app.use("/files", express.static(path.resolve(__dirname, "..", "tmp")));
 
 app.use(routes);
 
-app.listen(3030);
+app.listen(process.env.PORT || 3030);
