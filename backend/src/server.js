@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require("path");
 require("dotenv").config();
 const routes = require("./routes");
 
@@ -16,6 +17,7 @@ mongoose.connect(
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+app.use("/files", express.static(path.resolve(__dirname, "..", "tmp")));
 
 app.use(routes);
 
