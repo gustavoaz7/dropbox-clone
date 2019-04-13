@@ -4,7 +4,11 @@
   "repository": "https://github.com/gustavoaz7/dropbox-clone.git",
   "author": "gustavoaz7 <gustavo_azevedo_7@hotmail.com>",
   "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "backend"
+  ],
   "scripts": {
-    "start": "cd backend/ && yarn start"
+    "start": "yarn workspace backend start"
   }
 }
