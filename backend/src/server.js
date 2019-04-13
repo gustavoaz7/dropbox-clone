@@ -13,7 +13,7 @@ app.use(cors());
 const server = http.Server(app);
 const io = socket(server);
 
-io.on("connect", socket => {
+io.on("connection", socket => {
   socket.on("connectRoom", box => {
     socket.join(box);
   });
