@@ -17,3 +17,12 @@ body {
   color: " #333";
   -webkit-font-smoothing: antialiased !important;
 }
+
+h1,
+h2,
+h3,
+h4,
+span,
+strong {
+  color: #333;
+}
