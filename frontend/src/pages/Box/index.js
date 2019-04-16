@@ -26,7 +26,6 @@ export default class Box extends Component {
     io.emit("connectRoom", box);
 
     io.on("file", data => {
-      console.log("data", data);
       this.setState({
         box: {
           ...this.state.box,
