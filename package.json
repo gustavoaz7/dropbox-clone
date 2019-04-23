@@ -6,7 +6,8 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "backend"
+    "backend",
+    "frontend"
   ],
   "scripts": {
     "start": "yarn workspace backend start"
